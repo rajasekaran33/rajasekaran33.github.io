@@ -1,11 +1,12 @@
 # Introduction to Node.js
+### Dr.S.Rajasekaran
+#### AP-II/AI&DS/KCT
 ---
 
 ## What is Node.js?
-- **Definition:** Node.js is a **runtime environment** that lets you run JavaScript outside the browser.
-- **Built on:** Google Chrome’s **V8 JavaScript engine**.
-- **Purpose:** Originally designed for building **fast, scalable network applications**.
-
+- Runtime environment for running JavaScript outside the browser.
+- Built on Google Chrome’s V8 engine.
+- Designed for fast, scalable network applications.
 ---
 
 ## Why Learn Node.js?
@@ -15,41 +16,85 @@
 - **Real‑world use:** Powers apps like Netflix, LinkedIn, PayPal.
 
 ---
-## Core Concepts
-1. **Event‑Driven Architecture**  
-   - Node.js uses an **event loop** to handle requests asynchronously.  
-   - Example: Instead of waiting for a file to load, Node.js continues executing other code.  
-   ![](https://media2.dev.to/dynamic/image/width=500,height=210,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Focb53aaqp7ut61gihn73.jpg)
+### Event‑Driven Architecture
+- Uses an event loop to process tasks asynchronously.
+- Example: Reads files without blocking other code.
+![](https://media.geeksforgeeks.org/wp-content/uploads/20211017211104/EDP1drawio-660x305.png)
 ---
-2. **Modules**  
-   - Built‑in modules like `fs` (file system), `http`, `path`.  
-   - You can also install external modules using `npm`.
+### Modules
+- Built‑in: fs, http, path.
+- External: install with npm install <package>.
+- Example: npm install express. 
+![](https://media.geeksforgeeks.org/wp-content/uploads/20260312180649531204/types_of_modules.webp)
 ---
-3. **npm (Node Package Manager)**  
+### npm (Node Package Manager)  
    - Command line tool to install and manage packages.  
    - Example: `npm install express`.
 ---
+# Setup Node.js Server on Windows
+---
+### Step 1: Install Node.js
+- Go to https://nodejs.org
+- Download the LTS (Recommended) version for Windows
+- Run the installer → click Next → keep defaults → finish
+- Verify installation: (Open CMD Prompt and type)
+```bash
+node -v
+v24.18.1 (node version)
 
-
-```javascript
-http = require('http')
-fs = require('fs')  
-url = require('url');
-server = http.createServer((req,res)=>{
-    
-    if(req.url === '/'){
-        fs.readFile("index.html", (er,fileContent)=>{
-            res.writeHead(200,{'Content-Type':'text/html'})
-            res.end(fileContent.toString());
-        })  
-    }
-    else if(req.url.startsWith('/process')){
-        const myUrl = new URL(req.url, "http://${req.headers.host}");
-        const name = myUrl.searchParams.get('username');
-        res.writeHead(200,{'Content-Type':'text/html'})
-        res.end("<h1> Hello "+name+"</h1>");
-    }
+npm -v
+11.16.0 (npm version)
 ```
 ---
-![](image.png)
+### Step 2: Create a Project Folder
+- Open File Explorer → make a folder, e.g., node-server
+- Open Command Prompt / PowerShell in that folder:
+```bash
+  cd path\to\node-server
+```
 ---
+### Step 3: Initialize Project
+```bash
+npm init -y (This creates a package.json file)
+```
+#### package.json
+```json
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
+
+```
+---
+### Step 4: Create Server File
+- Create a file server.js with following content
+```js
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World from Node.js!');
+});
+
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+```
+[code-example](code-examples/01-hello-node-js)
+---
+## Step 5: Run the Server
+```bash
+node server.js
+```
+- (Open browser → visit http://localhost:3000)
+---
+
