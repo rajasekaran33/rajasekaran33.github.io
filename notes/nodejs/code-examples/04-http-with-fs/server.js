@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
       res.writeHead(500, { 'Content-Type': 'text/plain' });
       res.end('Error loading page');
     } else {
-      res.end(data);
+      res.end(data.toString());
     }
   });
 });

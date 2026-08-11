@@ -240,6 +240,22 @@ server.listen(3000, () => {
 - res.end(page) sends the entire HTML page to the browser.
 - The browser will render it like a normal webpage.
 ---
+### Tasks
+- Hello World Page
+  - Serve a string containing &lt;h1&gt;Hello World&lt;/h1&gt; as HTML content.
+  - Students should see "Hello World" in large heading when they open the page.
+
+- Student Info Table
+  - Serve an HTML string with a &lt;table&gt; showing 3 students (Name, Roll No, Marks).
+
+---
+- Favorite Movies List
+  - Serve an HTML string containing an &lt;ol&gt; list of 5 favorite movies.
+  - Each movie should be inside &lt;li&gt; tags.
+- Simple Registration Form
+  - Serve an HTML string with a form containing fields: Name, Email, Password
+  - Include a &lt;button&gt; labeled "Submit".
+---
 #### Lmitations & Issues
 - Hard‑coded HTML
   - The HTML is embedded directly in your JavaScript file.
