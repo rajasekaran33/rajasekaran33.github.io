@@ -341,11 +341,11 @@ server.listen(3000, () => {
   console.log('Server running at http://localhost:3000/');
 });
 ```
-[code-server.js](code-examples/04-http-with-fs/server.js)
-[code-index.html](code-examples/04-http-with-fs/index.html)
+[code-server.js](code-examples/05-http-with-fs/server.js)
+[code-index.html](code-examples/05-http-with-fs/index.html)
 ---
 #### Output
-![](code-examples/04-http-with-fs/image.png)
+![](code-examples/05-http-with-fs/image.png)
 ---
 #### Explanation
 - http.createServer → creates a basic web server.
@@ -363,3 +363,8 @@ fs.readFile('index.html', (err, data) => {
 ```
 - res.end(data) → sends the file contents as the HTTP response.
 ---
+![](code-examples/09-http-fs-two-pages/output/home.png)
+---
+![](code-examples/09-http-fs-two-pages/output/page2.png)
+---
+
