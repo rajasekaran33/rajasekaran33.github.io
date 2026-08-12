@@ -1,0 +1,12 @@
+{
+  "name": "Node.js Examples",
+  "workspaceFolder": "notes/nodejs/code-examples",
+  "settings": {},
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "ms-vscode.vscode-typescript-next"
+  ],
+  "postCreateCommand": "npm install",
+  "forwardPorts": [3000],
+  "postStartCommand": "node server.js"
+}
