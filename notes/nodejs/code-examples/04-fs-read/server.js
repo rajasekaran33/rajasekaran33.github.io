@@ -1,7 +1,7 @@
 fs = require('fs')
 
 fs.readFile('data.txt', (err, fileContent)=>{
-    if(err){
+     if(err){
         console.log("file not available");
     }
     else{
@@ -9,3 +9,6 @@ fs.readFile('data.txt', (err, fileContent)=>{
         console.log(fc);
     }
 })
+
+const fc = fs.readFileSync('data.txt');
+console.log(fc.toString());

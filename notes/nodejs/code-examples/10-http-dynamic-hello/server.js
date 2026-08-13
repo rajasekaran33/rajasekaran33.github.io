@@ -15,9 +15,10 @@ const server = http.createServer((req, res) => {
     })
   }
   else if (req.url.startsWith("/process")) {
-    const url = new URL(req.url, "http://${req.headers.host}");
+    const url = new URL(req.url, `http://${req.headers.host}`);
     const parms = url.searchParams;
     const username = parms.get('username');
+    
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end(`<h1> Hello ${username}</h1>`);
   }

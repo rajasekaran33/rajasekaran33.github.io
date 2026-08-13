@@ -3,6 +3,7 @@ const http = require('http');
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   let page = "";
+  
   if(req.url === '/'){
     page = `
     <h1>Home Page</h1><br>
@@ -12,6 +13,7 @@ const server = http.createServer((req, res) => {
   else if(req.url === '/page2'){
     page = "<h1>Page2</h1>";
   }
+  
   res.end(page);
 });
  

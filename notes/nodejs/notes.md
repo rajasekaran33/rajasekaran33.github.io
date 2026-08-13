@@ -180,25 +180,25 @@ server.listen(3000, () => {
 ---
 ### Core Modules
 
-| Module  | Purpose                                |
-|---------|----------------------------------------|
-| http    | Create servers and clients             |
-| fs      | File system operations (read/write)    |
-| path    | Work with file paths                   |
-| os      | System info (CPU, memory, hostname)    |
-| events  | Event emitter pattern                  |
-| url     | Parse and format URLs                  |
+| Module | Purpose                             |
+| ------ | ----------------------------------- |
+| http   | Create servers and clients          |
+| fs     | File system operations (read/write) |
+| path   | Work with file paths                |
+| os     | System info (CPU, memory, hostname) |
+| events | Event emitter pattern               |
+| url    | Parse and format URLs               |
 
 ---
 #### Core Modules (cont..)
 
-| Module  | Purpose                                |
-|---------|----------------------------------------|
-| crypto  | Hashing, encryption                    |
-| net     | TCP servers/clients                    |
-| stream  | Handle streaming data                  |
-| util    | Utility functions                      |
-| zlib    | Compression/decompression              |
+| Module | Purpose                   |
+| ------ | ------------------------- |
+| crypto | Hashing, encryption       |
+| net    | TCP servers/clients       |
+| stream | Handle streaming data     |
+| util   | Utility functions         |
+| zlib   | Compression/decompression |
 
 ---
 
@@ -296,26 +296,26 @@ server.listen(3000, () => {
 - Modeled on POSIX functions (standard UNIX file system calls).
 ---
 ### fs methods
-| Method                          | Purpose                     | Example                                                   |
-|---------------------------------|-----------------------------|-----------------------------------------------------------|
-| fs.readFile(path, callback)     | Read a file asynchronously  | fs.readFile('file.txt', 'utf8', (err, data) => { ... })   |
-| fs.readFileSync(path)           | Read a file synchronously   | const data = fs.readFileSync('file.txt', 'utf8');         |
-| fs.writeFile(path, data, cb)    | Write data to a file        | fs.writeFile('file.txt', 'Hello', err => { ... })         |
+| Method                       | Purpose                    | Example                                                 |
+| ---------------------------- | -------------------------- | ------------------------------------------------------- |
+| fs.readFile(path, callback)  | Read a file asynchronously | fs.readFile('file.txt', 'utf8', (err, data) => { ... }) |
+| fs.readFileSync(path)        | Read a file synchronously  | const data = fs.readFileSync('file.txt', 'utf8');       |
+| fs.writeFile(path, data, cb) | Write data to a file       | fs.writeFile('file.txt', 'Hello', err => { ... })       |
 
 --
-| Method                          | Purpose                     | Example                                                   |
-|---------------------------------|-----------------------------|-----------------------------------------------------------|
-| fs.appendFile(path, data, cb)   | Append data to a file       | fs.appendFile('file.txt', 'More text', err => { ... })    |
-| fs.unlink(path, callback)       | Delete a file               | fs.unlink('file.txt', err => { ... })                     |
-| fs.mkdir(path, callback)        | Create a directory          | fs.mkdir('newDir', err => 
-{ ... })                          |
+| Method                        | Purpose               | Example                                                |
+| ----------------------------- | --------------------- | ------------------------------------------------------ |
+| fs.appendFile(path, data, cb) | Append data to a file | fs.appendFile('file.txt', 'More text', err => { ... }) |
+| fs.unlink(path, callback)     | Delete a file         | fs.unlink('file.txt', err => { ... })                  |
+| fs.mkdir(path, callback)      | Create a directory    | fs.mkdir('newDir', err =>                              |
+| { ... })                      |
 
 --
-| Method                          | Purpose                     | Example                                                   |
-|---------------------------------|-----------------------------|-----------------------------------------------------------|
-| fs.readdir(path, callback)      | Read directory contents     | fs.readdir('.', (err, files) => { ... })                  |
-| fs.stat(path, callback)         | Get file metadata           | fs.stat('file.txt', (err, stats) => { ... })              |
-| fs.watch(path, callback)        | Watch file changes          | fs.watch('file.txt', (event, filename) => { ... })        |
+| Method                     | Purpose                 | Example                                            |
+| -------------------------- | ----------------------- | -------------------------------------------------- |
+| fs.readdir(path, callback) | Read directory contents | fs.readdir('.', (err, files) => { ... })           |
+| fs.stat(path, callback)    | Get file metadata       | fs.stat('file.txt', (err, stats) => { ... })       |
+| fs.watch(path, callback)   | Watch file changes      | fs.watch('file.txt', (event, filename) => { ... }) |
 
 ---
 ### Serving html from external file
@@ -367,4 +367,13 @@ fs.readFile('index.html', (err, data) => {
 ---
 ![](code-examples/09-http-fs-two-pages/output/page2.png)
 ---
+<iframe frameBorder="0" height="500px" width="100%" src="https://onecompiler.com/java/44xzeaxsf"></iframe>
 
+[Click to View](https://onecompiler.com/java/44xzeaxsf)
+---
+<iframe src="https://onlinegdb.com/6PVGwmBKJ"
+        width="100%" height="500"
+        frameborder="0"
+        allowfullscreen>
+</iframe>
+---
