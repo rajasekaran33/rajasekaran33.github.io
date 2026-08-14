@@ -1,10 +1,10 @@
 import java.util.Scanner;
-
 class Wallet{
     private int balance;
-
     public void putMoney(int amount){
-        this.balance = this.balance + amount;
+        if(amount>0){
+            this.balance = this.balance + amount;
+        }
     }
     public int getMoney(int amount){
         if(amount<=balance){
@@ -16,7 +16,6 @@ class Wallet{
     public void displayBalance(){
         System.out.println("balance="+this.balance);
     }
-
 }
 
 
