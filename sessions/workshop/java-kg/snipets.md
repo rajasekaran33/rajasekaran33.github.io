@@ -1,5 +1,6 @@
 [Live](https://prod.liveshare.vsengsaas.visualstudio.com/join?E2E412AEA392F0801B93B9217609D1C903F1)
 [OneC](https://onecompiler.com/java/44y7emcbk)
+[OnGDB](https://onlinegdb.com/t70ITGMwm)
 
 # 1 
 ```java
