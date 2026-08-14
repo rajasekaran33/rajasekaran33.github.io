@@ -6,9 +6,13 @@ class Wallet{
             this.balance = this.balance + amount;
         }
     }
+    public void process(){
+        int[] notes = {50,20,10,100,200};
+    }
     public int getMoney(int amount){
         if(amount<=balance){
             this.balance = this.balance - amount;
+            
             return amount;
         }
         return 0;
@@ -28,9 +32,11 @@ public class Main {
         int amount = 0;
         Scanner sc = new Scanner(System.in);
         wallet.putMoney(100); 
-        wallet.displayBalance();
-        wallet.getMoney(200);
-        wallet.displayBalance();
+        //wallet.displayBalance();
+        //wallet.getMoney(200);
+        //wallet.displayBalance();
+        //wallet.displayBalance();
+
         wallet.displayBalance();
 
         sc.close();
