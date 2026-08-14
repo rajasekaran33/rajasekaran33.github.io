@@ -1,4 +1,4 @@
-![Live](https://prod.liveshare.vsengsaas.visualstudio.com/join?8F35CEE8B9164AF962C6F00DC937FCA64831)
+[Live](https://prod.liveshare.vsengsaas.visualstudio.com/join?8F35CEE8B9164AF962C6F00DC937FCA64831)
 # 1 
 ```java
 import java.util.Scanner;
