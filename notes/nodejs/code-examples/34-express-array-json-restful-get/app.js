@@ -1,15 +1,11 @@
 express = require('express')
 app = express()
 nums = [2,3,4,5,2,4]
-app.use(express.json())
-app.get('/nums',(req,res)=>{
-    res.send(nums)
-})
 
-app.post("/nums", (req, res)=>{
-    const newValue = req.newValue;
-    nums.push(newValue);
-    res.send({ "status": "success" })
+app.use(express.json())
+
+app.get('/nums',(req,res)=>{
+    res.json({nums})
 })
 
 app.listen(3000, ()=>{

@@ -1,0 +1,108 @@
+<html>
+
+<body>
+    <p id="content"></p><br><br>
+    <button onclick="getElements()">GET Array Elements</button>
+    <hr>
+    <input id="postelement" type="text" placeholder="enter element"><br>
+    <button onclick="postElement()">POST Element</button>
+    <p id="poststatus"></p>
+
+    <hr>
+    <input id="putelements" type="text" placeholder="enter elements - coma seprated"><br>
+    <button onclick="putElements()">PUT Elements</button>
+    <p id="putstatus"></p>
+
+    <hr>
+    <input id="deleteindex" type="text" placeholder="index"><br>
+    <button onclick="deleteElement()">DELETE Element</button><br>
+    <p id="deletestatus"></p>
+
+    <hr>
+    <input id="patchindex" type="text" placeholder="patchindex"><br>
+    <input id="patchvalue" type="text" placeholder="patchvalue"><br>
+    <button onclick="patchElement()">PATCH Element</button><br>
+    <p id="patchstatus"></p>
+
+    <script>
+        const BASE_URL = window.location.origin;
+        function getElements() {
+            fetch(`${BASE_URL}/nums`)
+                .then(response=>response.text())
+                .then(response=>{
+                    document.getElementById('content').innerHTML = response;
+                })
+                .catch(err => console.log(err));
+        }
+
+        function postElement(){
+            const newValue = document.getElementById('postelement').value;
+            const reqToSend = {
+                method:"POST",
+                headers:{"Content-Type":"text/plain"},
+                body:newValue
+            }
+
+            fetch(`${BASE_URL}/nums`,reqToSend)
+            .then(response=>response.text())
+            .then(response=>{
+                document.getElementById('poststatus').innerHTML = response;
+                getElements();
+            });
+        }
+
+        function putElements(){
+            const newElements = document.getElementById('putelements').value;
+            const reqToSend = {
+                method:"PUT",
+                headers:{"Content-Type":"text/plain"},
+                body:newElements
+            }
+
+            fetch(`${BASE_URL}/nums`,reqToSend)
+            .then(response=>response.text())
+            .then(response=>{
+                document.getElementById('putstatus').innerHTML = response;
+                getElements();
+            });
+        }
+
+        function deleteElement(){
+            const index = document.getElementById('deleteindex').value;
+            const reqToSend = {
+                method:"DELETE",
+                headers:{"Content-Type":"text/plain"},
+                body:index
+            }
+
+            fetch(`${BASE_URL}/nums`,reqToSend)
+            .then(response=>response.text())
+            .then(response=>{
+                document.getElementById('deletestatus').innerHTML = response;
+                getElements();
+            });
+        }
+
+        function patchElement(){
+            const index = document.getElementById('patchindex').value;
+            const value = document.getElementById('patchvalue').value;
+            console.log('patch body before')
+            const reqToSend = {
+                method:"PATCH",
+                headers:{"Content-Type":"text/plain"},
+                body:""+index+","+value
+            }
+
+            fetch(`${BASE_URL}/nums`,reqToSend)
+            .then(response=>response.text())
+            .then(response=>{
+                document.getElementById('patchstatus').innerHTML = response;
+                getElements();
+            });
+        }
+
+
+    </script>
+</body>
+
+</html>

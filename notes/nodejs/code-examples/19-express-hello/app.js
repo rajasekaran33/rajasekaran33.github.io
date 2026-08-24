@@ -1,6 +1,5 @@
 express = require('express')
 app = express()
-nums = [2,3,4,5,2,4]
 app.get('/',(req,res)=>{
     res.send("Hello Express")
 })
