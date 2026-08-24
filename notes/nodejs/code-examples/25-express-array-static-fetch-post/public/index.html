@@ -1,0 +1,39 @@
+<html>
+
+<body>
+    <p id="content"></p><br><br>
+    <button onclick="getElements()">Get Array Elements</button>
+    <hr>
+    <input id="postelement" type="text" placeholder="enter element"><br>
+    <button onclick="postElement()">POST Element</button>
+    <p id="poststatus"></p>
+    <script>
+        const BASE_URL = window.location.origin;
+        function getElements() {
+            fetch(`${BASE_URL}/nums`)
+                .then(response=>response.text())
+                .then(response=>{
+                    document.getElementById('content').innerHTML = response;
+                })
+                .catch(err => console.log(err));
+        }
+
+        function postElement(){
+            const newValue = document.getElementById('postelement').value;
+            const reqToSend = {
+                method:"post",
+                headers:{"Content-Type":"text/plain"},
+                body:newValue
+            }
+
+            fetch(`${BASE_URL}/nums`,reqToSend)
+            .then(response=>response.text())
+            .then(response=>{
+                document.getElementById('poststatus').innerHTML = response;
+                getElements();
+            });
+        }
+    </script>
+</body>
+
+</html>

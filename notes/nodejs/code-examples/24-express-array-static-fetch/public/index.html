@@ -1,0 +1,19 @@
+<html>
+
+<body>
+    <p id="content"></p><br><br>
+    <button onclick="getElements()">Get Array Elements</button>
+    <script>
+        function getElements() {
+            const BASE_URL = window.location.origin;
+            fetch(`${BASE_URL}/nums`)
+                .then(response=>response.text())
+                .then(response=>{
+                    document.getElementById('content').innerHTML = response;
+                })
+                .catch(err => console.log(err));
+        }
+    </script>
+</body>
+
+</html>
