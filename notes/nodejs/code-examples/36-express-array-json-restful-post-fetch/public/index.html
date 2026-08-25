@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <input type="text" id="postinput">
+        <button type="button" onclick="postInput()">POST</button>
+        <p id="poststatus"></p>
+        <script>
+            const BASE_URL = window.location.origin;
+            function postInput(){
+                const postinput = document.getElementById("postinput").value;
+                console.log("post")
+                fetch(`${BASE_URL}/nums`, {
+                    method:"POST",
+                    headers:{"Content-Type":"application/json"},
+                    body: JSON.stringify({"postinput":postinput})
+                })
+                .then(response=>response.text())
+                .then(response=>{
+                    document.getElementById("poststatus").innerHTML = response;
+                })
+            }
+        </script>
+    </body>
+</html>

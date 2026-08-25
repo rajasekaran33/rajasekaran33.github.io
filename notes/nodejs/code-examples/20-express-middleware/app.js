@@ -1,6 +1,8 @@
 express = require('express')
 app = express()
+
 app.use(middleWare())
+
 app.get('/',(req,res)=>{
     console.log("Before Response")
     res.send("Hello Express")
